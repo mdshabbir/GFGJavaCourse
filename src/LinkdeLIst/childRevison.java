@@ -10,7 +10,9 @@ public class childRevison extends LinkedLIstRevision{
 //     head = deletFirst(head);
 //      print(head);
 //      head = deleteLastElement(head);
-        head = deleteKthNode(head,1);
+        head = deleteKthNode(head,2);
+
+
       print(head);
 
     }
@@ -43,20 +45,22 @@ public class childRevison extends LinkedLIstRevision{
     // so late make the method to delete the kth element
     public  static Node deleteKthNode(Node head , int k){
         // let a preivous not which is equal to prev
-        Node prev = head;
+        Node curr = head;
+        Node mover = curr.next;
         int count =0;
-        // lete a current node = current
-        Node current = prev.next;
-        // let a forward node  forward
-        Node forward = current.next;
-        while (prev.next !=null){
+        if( k==1){
+           return  deletFirst(curr);
+        }
+
+        while (curr.next !=null){
             count++;
-            prev= prev.next;
-            current=current.next;
-            forward=forward.next;
-            if(count==k){
-                prev.next = forward;
+            if(count == k){
+                curr.next = mover.next;
+                return head;
             }
+             curr = curr.next;
+            mover = mover.next;
+
 
         }
 
