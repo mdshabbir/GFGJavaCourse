@@ -10,7 +10,6 @@ public class HashmapExam {
         map.put("Shabbir", 10);
         // System.out.println(map);
         System.out.println(map.get("Shabbir"));
-        map.put
 
     }
 }
