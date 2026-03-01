@@ -23,4 +23,29 @@ public class SelectionSort {
 
         }
     }
+    public static void selecSort (int[] arr , int n , String order) {
+        for (int i = 0; i < n - 2; i++) {
+            int smallest = i;
+            if (order == "asc") {
+                for (int j = i; j < n - 1; j++) {
+                    if (arr[j] < arr[smallest]) {
+                        smallest = j;
+                    }
+                }
+
+            } else {
+                for (int j = i; j < n - 1; j++) {
+                    if (arr[j] > arr[smallest]) {
+                        smallest = j;
+                    }
+                }
+
+            }
+
+
+            int temp = i;
+            arr[i] = arr[smallest];
+            arr[smallest] = arr[temp];
+        }
+    }
 }
