@@ -3,7 +3,8 @@ package sorting;
 public class SelectionSort {
     public static void main(String[] args) {
         int[] arr = {10,23,4,42,32,5,6,11,26,16};
-        selectionSort(arr);
+        // use global selection sort (ascending)
+        SortingUtils.selectionSort(arr, true);
         for(int i : arr) {
             System.out.print(i + "  ");
         }
