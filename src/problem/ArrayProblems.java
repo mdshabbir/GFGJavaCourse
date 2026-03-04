@@ -1,5 +1,6 @@
 package problem;
 
+import sorting.InsertionSort;
 import sorting.SortingUtils;
 
 import java.util.*;
@@ -12,10 +13,19 @@ public class ArrayProblems {
 //        int[] arr = { 12,324,23,54,64,23};
 //        SortingUtils.insertionSort(arr);
 //        isSorted(arr);
-        int[] arr = {1 ,0 ,2 ,3 ,0 ,4 ,0 ,1};
+//        int[] arr = {1 ,0 ,2 ,3 ,0 ,4 ,0 ,1};
+//       int[]    arr1= {1,2,3,4,5,6,7,8,9,10};
+//       int[]    arr2= {2,3,4,4,5,11,12};
+//        Set<Integer> unionset  = unionOfArray(arr1,arr2);
+//        System.out.println();
+//        for (int i : unionset) {
+//            System.out.print(i + " ");
+//        }
 //        leftRoatebyK(arr,2 , "left");
-        removeZero(arr);
-
+//        removeZero(arr);
+//        System.out.println(searchElement(arr,4));
+       int[] arr = {8, 2, 4, 5, 3, 7, 1};
+        System.out.println(findMissingNumber(arr));
 
     }
 
@@ -205,12 +215,78 @@ public class ArrayProblems {
 
             }
         }
+        // we want to find element in array
+    public static int searchElement(int[] arr , int n) {
+        int pos = -1;
+        if (arr.length == 0) {
+            System.out.println("Array is empty!");
+            return  pos;
+        }
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == n) {
+                pos = i;
+            }
+        }
+        return  pos;
+    }
 
+// find the union of two sorted array.
 
+    /*
+    Input:n = 5,m = 5 arr1[] = {1,2,3,4,5}  arr2[] = {2,3,4,4,5}
+Output: {1,2,3,4,5}
+Explanation: Common Elements in arr1 and arr2  are:  2,3,4,5
+Distnict Elements in arr1 are : 1
+Distnict Elemennts in arr2 are : No distinct elements.
+Union of arr1 and arr2 is {1,2,3,4,5}
 
+Input:n = 10,m = 7,arr1[] = {1,2,3,4,5,6,7,8,9,10}arr2[] = {2,3,4,4,5,11,12}
+Output: {1,2,3,4,5,6,7,8,9,10,11,12}
+Explanation: Common Elements in arr1 and arr2  are:  2,3,4,5
+Distnict Elements in arr1 are : 1,6,7,8,9,10
+Distnict Elemennts in arr2 are : 11,12
+Union of arr1 and arr2 is {1,2,3,4,5,6,7,8,9,10,11,12}
+     */
+   public static Set<Integer> unionOfArray(int[] arr1, int[] arr2) {
+       Set<Integer> union = new HashSet<>();
+       if (arr1 != null) {
+           for (int v : arr1) union.add(v);
+       }
+       if (arr2 != null) {
+           for (int v : arr2) union.add(v);
+       }
+       for (int v : union) {
+           System.out.print(v + " ");
+       }
+       return union;
+   }
+   /*
+   Given an array arr[] of size n-1 with distinct integers in the range of [1, n]. This array represents a permutation of the integers from 1 to n with one element missing. Find the missing element in the array.
 
+Examples:
 
+Input: arr[] = [8, 2, 4, 5, 3, 7, 1]
+Output: 6
+Explanation: All the numbers from 1 to 8 are present except 6.
 
+Input: arr[] = [1, 2, 3, 5]
+Output: 4
+Explanation: Here the size of the array is 4, so the range will be [1, 5]. The missing number between 1 to 5 is 4
+    */
+
+  public static int findMissingNumber(int[] arr) {
+//      SortingUtils.insertionSort(arr);
+      // expected length of the array is equal to 1 more then the current length
+      int n = arr.length + 1;
+      int realsum = 0;
+      // sum of all natural number from 1 to n is n*(n+1)/2
+      int expectedSum = (n*(n+1))/2;
+      for (int i : arr) {
+          realsum+=i;
+      }
+      System.out.println(expectedSum + " " + realsum);
+      return expectedSum - realsum;
+  }
 
 }
 
