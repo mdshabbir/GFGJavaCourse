@@ -24,8 +24,12 @@ public class ArrayProblems {
 //        leftRoatebyK(arr,2 , "left");
 //        removeZero(arr);
 //        System.out.println(searchElement(arr,4));
-       int[] arr = {8, 2, 4, 5, 3, 7, 1};
-        System.out.println(findMissingNumber(arr));
+//       int[] arr = {8, 2, 4, 5, 3, 7, 1};
+//        System.out.println(findMissingNumber(arr));
+//        int[] arr = {1,0,1,1,1,0,1,1};
+////        System.out.println(consecutiveOnes(arr));
+        int[] arr = {4,1,2,1,2};
+        System.out.println(findNumberOccur1s(arr));
 
     }
 
@@ -287,6 +291,62 @@ Explanation: Here the size of the array is 4, so the range will be [1, 5]. The m
       System.out.println(expectedSum + " " + realsum);
       return expectedSum - realsum;
   }
+  /*
+  Count Maximum Consecutive One's in the array
+  Example 1:
+Input: prices = {1, 1, 0, 1, 1, 1}
+Output: 3
+Explanation: There are two consecutive 1’s and three consecutive 1’s in the array out of which maximum is 3.
+
+Example 2:
+Input: prices = {1, 0, 1, 1, 0, 1}
+Output: 2
+Explanation: There are two consecutive 1's in the array.
+   */
+    public static int consecutiveOnes(int[] arr) {
+    int count  = 0;
+    int maxi = 0;
+     for (int i = 0; i < arr.length; i++) {
+         if (arr[i] == 1) {
+             count++;
+         } else {
+             count = 0;
+         }
+         // if count is greater then maxi update maxi
+         maxi = Math.max(maxi,count);
+     }
+     return maxi;
+    }
+
+    /*
+    Example 1:
+Input Format: arr[] = {2,2,1}
+Result: 1
+Explanation: In this array, only the element 1 appear once and so it is the answer.
+
+
+Example 2:
+Input Format: arr[] = {4,1,2,1,2}
+Result: 4
+Explanation: In this array, only element 4 appear once and the other elements appear twice. So, 4 is the answer.
+     */
+    static int findNumberOccur1s(int[] arr) {
+        int count = 1;
+        int resutl = 0;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length -1; j++) {
+                if (arr[j] == arr[j+1]) {
+                    count++;
+
+                }
+            }
+            if (count == 1) {
+                resutl = arr[i];
+                break;
+            }
+        }
+        return  resutl;
+    }
 
 }
 

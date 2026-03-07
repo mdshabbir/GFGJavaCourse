@@ -4,8 +4,11 @@ public class Pattern {
     public static void main(String[] args) {
         // print a universal pattern
 //       universalPattern(11);
-        decrementTriangle(5);
+//        decrementTriangle(5);
+//        squrePattern(5);
+        hollowRightAngleTriangle();
     }
+
     public static void universalPattern (int n) {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
@@ -39,6 +42,45 @@ public class Pattern {
             }
             System.out.println();
         }
+    }
+
+    // print square patter
+    /*
+               *  *  *  *  *
+               *  *  *  *  *
+               *  *  *  *  *
+               *  *  *  *  *
+               *  *  *  *  *
+
+     */
+    public static void squrePattern (int n) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+               if (i == 1 || i == n || j == 1 || j == n) {
+                   System.out.print("*  ");
+               } else {
+                   System.out.print("   ");
+               }
+            }
+            System.out.println();
+        }
+    }
+    // print hollow right angle triangle
+    public static void hollowRightAngleTriangle() {
+        for (int i = 1; i <= 5; i++) {
+            for (int j = 1; j <= 5; j++) {
+                if (j == 1 || i == 5 || i == j) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    public static void hollowEquilateralTriangle () {
+
     }
 
 }
