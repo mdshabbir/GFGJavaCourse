@@ -6,7 +6,7 @@ public class ReverseLL {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        String[] st = sc.nextLine().trim().split("//s+");
+        String[] st = sc.nextLine().trim().split("\\s+");
         Node head = null , tail = null;
         for(String s : st) {
             Node newNode = new Node(Integer.parseInt(s));
