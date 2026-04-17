@@ -22,9 +22,7 @@ public class Main {
             marks[i] = sc.nextInt();
         }
         for (int n : marks) {
-                int i = 1;
-                System.out.println("The " + i + " stuent marks: " + n);
-                i++;
+                System.out.println(n);
         }
     }
 
