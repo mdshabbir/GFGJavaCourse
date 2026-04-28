@@ -24,7 +24,7 @@ public class Main {
         for (int i = 0; i<student; i++) {
             // use 2d array store the marks of each subject of each student
                 for (int j  = 0; j < totalSubject; j++) {
-                    System.out.println("Please Enter the marks socre by: " + (i + 1) + " Student " + "in " + subject[j] + ":" );
+                    System.out.println("Please Enter the marks socre by: " + (i + 1) + " Student " + "in " );
                     marks[i][j] = (int)(Math.random() * ((max - min) + 1)) + min;
                 }
         }
