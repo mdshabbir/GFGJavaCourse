@@ -1,8 +1,0 @@
-{
-  "env": {
-    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
-    "ANTHROPIC_API_KEY": "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"
-  },
-  "model": "claude-opus-4-6",
-  "language": "english"
-}
