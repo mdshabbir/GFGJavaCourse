@@ -2,7 +2,7 @@ package DoublyLL;
 
 import LinkdeLIst.LinkedLIstRevision;
 
-public class DoublyLLRevison extends LinkedLIstRevision {
+public class DoublyLLRevision extends LinkedLIstRevision {
 
 
 
@@ -12,7 +12,7 @@ public class DoublyLLRevison extends LinkedLIstRevision {
     }
 
     public static void main(String[] args) {
-        DoublyLLRevison  obj = new DoublyLLRevison();
+        DoublyLLRevision obj = new DoublyLLRevision();
         // create doubly LL
         Node head = new Node(obj.arr[0]);
         // crete a doubly linkedLIst
@@ -50,18 +50,3 @@ public class DoublyLLRevison extends LinkedLIstRevision {
 }
 
 
-class Node {
-    int data ;
-    Node next;
-    Node back;
-    Node(int data, Node next1 , Node back1){
-        this.data=data;
-        this.next = next1;
-        this.back = back1;
-    }
-    Node (int data){
-        this.data = data;
-        this.next = null;
-        this.back = null;
-    }
-}
