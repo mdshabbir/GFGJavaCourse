@@ -2,7 +2,7 @@ package DoublyLL;
 
 import java.util.Stack;
 
-public class DLLOperation extends  DoublyLLRevison {
+public class DLLOperation extends DoublyLLRevision {
     public void printArray() {
         int[] arr = getNumbers();
 
